@@ -30,6 +30,9 @@ class DVD(ItemBibliotheque):
         if age < 18:
             return "n'est pas disponible"  # Les utilisateurs de moins de 18 ans ne peuvent pas emprunter de DVD
         return super().emprunter()  # Appel de la méthode emprunter du parent
+    # Utilisation du polymorphisme avec une fonction qui traite les items de manière générique
+    def verifier_disponibilite(item):
+        return item.disponible  # Retourne la disponibilité de l'item, qu'il soit un Livre ou un DVD
 
 
 

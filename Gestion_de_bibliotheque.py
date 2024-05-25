@@ -7,10 +7,11 @@ class listes(ABC):
 # Classe de base pour tous les éléments de la bibliothèque
 class ItemBibliotheque(listes):
     def __init__(self, titre, auteur, isbn):
-        self.titre = titre  
-        self.auteur = auteur  
-        self.isbn = isbn  
-        self.disponible = "disponible" 
+        """Pratique sur l'encapsulation"""
+        self.__titre = titre  
+        self.__auteur = auteur  
+        self.__isbn = isbn  
+        self.__disponible = "disponible" 
 
     def emprunter(self):
         if self.disponible:
@@ -40,6 +41,15 @@ class DVD(ItemBibliotheque):
     def verifier_disponibilite(item):
         return item.disponible  # Retourne la disponibilité de l'item, qu'il soit un Livre ou un DVD
 
+# Création d'instances de Livre et DVD
+livre1 = Livre("1984", "George", "1289", "Éditions fridy/uniluk")
+dvd1 = DVD("Inception", "Christopher Nolan", "987654321", 148)
+
+# Exemple d'emprunt et de retour
+livre1.emprunter()
+dvd1.emprunter(25)
+print(verifier_disponibilite(livre1))  # Affiche False car le livre a été emprunté
+print(verifier_disponibilite(dvd1))
 
 
 

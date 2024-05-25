@@ -7,10 +7,11 @@ class listes(ABC):
 # Classe de base pour tous les éléments de la bibliothèque
 class ItemBibliotheque(listes):
     def __init__(self, titre, auteur, isbn):
-        self.titre = titre  
-        self.auteur = auteur  
-        self.isbn = isbn  
-        self.disponible = "disponible" 
+        """Pratique sur l'encapsulation"""
+        self.__titre = titre  
+        self.__auteur = auteur  
+        self.__isbn = isbn  
+        self.__disponible = "disponible" 
 
     def emprunter(self):
         if self.disponible:

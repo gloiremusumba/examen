@@ -1,5 +1,11 @@
+#abstraction
+from abc import ABC
+class listes(ABC):
+    def test():
+        print("Ceci est un livre")
+
 # Classe de base pour tous les éléments de la bibliothèque
-class ItemBibliotheque():
+class ItemBibliotheque(listes):
     def __init__(self, titre, auteur, isbn):
         self.titre = titre  
         self.auteur = auteur  
